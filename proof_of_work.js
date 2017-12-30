@@ -95,3 +95,8 @@ blockchain1.addBlock(new Block(1, "10/07/2017", {amount:4}));
 console.log("Mining block 2...");
 blockchain1.addBlock(new Block(2, "12/07/2017", {amount:10}));
 
+
+console.log(blockchain1.isChainValid());
+blockchain1.chain[1].data = {amount: 100};
+blockchain1.chain[1].hash = blockchain1.chain[1].calculateHash();
+console.log(blockchain1.isChainValid());
